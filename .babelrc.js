@@ -23,7 +23,15 @@ module.exports = api => {
           helpers: true
         }
       ],
-      "transform-vue-jsx"
+      "transform-vue-jsx",
+      [
+        'import',
+        {
+          'libraryName': 'win',
+          libraryDirectory: 'components',
+          'style': false,   
+        }
+      ]
     ]
   }
 }

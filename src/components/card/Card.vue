@@ -12,7 +12,7 @@
   
     render () {
       return (
-        <div class="card">我是card组件</div>
+        <div class="win-card">我是card组件</div>
       )
     }
   }

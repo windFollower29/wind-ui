@@ -3,12 +3,21 @@
 // const entries = require.context('./', true, /index\.js$/)
 // console.log('entries', entries)
 
-const install = (Vue) => {
+import Button from './components/button/index'
+import Card from './components/card/index'
 
+const install = (Vue) => {
+  Vue.use(Button)
+  Vue.use(Card)
 }
 
 if (typeof window != undefined && window.Vue) {
   install(Vue)
+}
+
+export {
+  Button,
+  Card
 }
 
 export default {

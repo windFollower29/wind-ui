@@ -4,41 +4,19 @@ import Vue from 'vue'
 
 import App from './App.vue'
 
-// import Win from '../../dist/components/index'
+// import 'win/components/button/index.css'
+// import win from '../../node_modules/win'
+// TODO: why不行
+// import win from 'win'
+// Vue.use(win)
 
-const cDir = '../../lib/components'
-
-const entries = require.context('../../lib/components', true, /index\.js$/)
-
-// debugger
-// entries.keys().forEach((e) => {
-//   const c = require(cDir + e.replace(/\./, '')).default
-//   console.log('./' + cDir + e.replace(/\./, ''))
-//   // import('./' + cDir + e.replace(/\./, ''))
-//   //   .then(res => {
-//   //     console.log(res)
-//   //   })
-//   // Vue.component(c.name, c)
-// })
-// console.log('entries', entries)
-
-// import Button from '../../lib/components/button/index.js'
-// import Card from '../../lib/components/card/index.js'
-const Button = require('../../lib/components/button/index.js').default
-const Card = require('../../lib/components/card/index.js').default
-// window.Card = Card
-// console.log('Card', Card)
-// Vue.component(Card.name, Card)
-// Vue.component('win-button', Button)
-// Vue.use(Button)
+// 不使用的组件会被tree shaking掉
+import { Button, Card } from 'win'
 // Vue.use(Card)
-window.Vue = Vue
-import Win from '../../lib/components/index'
-Vue.use(Win)
 
-window.addEventListener('load', () => {
-  console.log('loaded')
-}, false)
+// 不使用的时候依然导入了
+// import Button from 'win/components/button/index'
+Vue.use(Button)
 
 new Vue({
   el: '#app',

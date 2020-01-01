@@ -11,10 +11,11 @@ const entries =  (() => {
 
   let entries = glob.sync('src/components/**/index.js')
   entries = entries.reduce((obj, file) => {
-
+    console.log('file', file)
     const p = path.dirname(file).replace('src', '')
     return Object.assign(obj, {
-      [p]: './' + file
+      // [p]: './' + file
+      [file.replace('src', '').replace('.js', '')]: './' + file
     })
   }, {})
   console.log('entries', entries)
@@ -23,10 +24,13 @@ const entries =  (() => {
 
 module.exports = merge(baseConf, {
   mode: 'development',
-  entry: entries,
+  entry: {
+    ...entries,
+    'index': './src/index.js'
+  },
   output: {
-    path: path.resolve(__dirname, '../lib'),
-    filename: '[name]/index.js',
+    path: path.resolve(__dirname, '../win'),
+    // filename: '[name]/index.js',
     library: 'win',
     libraryTarget: 'umd',
   },

@@ -11,7 +11,7 @@
   
     render () {
       return (
-        <div>我是button</div>
+        <div class="win-button">我是button组件</div>
       )
     }
   }

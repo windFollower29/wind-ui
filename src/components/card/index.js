@@ -1,6 +1,7 @@
 import Card from './Card'
 import { createComponent } from '../../utils/create'
 
+console.log('引入card组件')
 // const c = createComponent(Card)
 // console.log('c', c)
 export default createComponent(Card)
