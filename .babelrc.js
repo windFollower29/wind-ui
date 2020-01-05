@@ -27,10 +27,11 @@ module.exports = api => {
       [
         'import',
         {
-          'libraryName': 'win',
-          libraryDirectory: 'components',
-          'style': false,   
-        }
+          'libraryName': 'wind-ui',
+          libraryDirectory: 'lib/components',
+          'style': true,
+        },
+        // 'wind-ui'
       ]
     ]
   }

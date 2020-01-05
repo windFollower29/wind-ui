@@ -33,7 +33,7 @@ const baseConf = {
       },
       {
         test: /\.(js|ts|tsx|jsx)$/,
-        exclude: /node_modules|lib/,
+        exclude: /node_modules/,
         use: [
           {
             loader: 'babel-loader',

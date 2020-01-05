@@ -4,7 +4,10 @@
 // console.log('entries', entries)
 
 import Button from './components/button/index'
+import './components/button/index.scss'
+
 import Card from './components/card/index'
+import './components/card/index.scss'
 
 const install = (Vue) => {
   Vue.use(Button)
