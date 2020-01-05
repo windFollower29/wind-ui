@@ -68,7 +68,7 @@ module.exports = merge(baseConf, {
   output: {
     path: path.resolve(__dirname, '../', LIB_DIR),
     // filename: '[name]/index.js',
-    library: 'wind-ui',
+    library: 'wind-ui-vue',
     libraryTarget: 'umd',
   },
   plugins: [

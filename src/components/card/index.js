@@ -1,4 +1,4 @@
-import Card from './Card'
+import Card from './Card.vue'
 import { createComponent } from '../../utils/create'
 
 console.log('引入card组件')

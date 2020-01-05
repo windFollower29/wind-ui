@@ -4,14 +4,20 @@ import Vue from 'vue'
 
 import App from './App.vue'
 
-// import 'wind-ui/lib/components/button/index.css'
-// TODO: why不行
-// import win from 'wind-ui'
-// const win = require('wind-ui').default
+// commonjs module
+// const win = require('wind-ui-vue').default
+// import 'wind-ui-vue/lib/index.css'
+// Vue.use(win)
+
+// esModule
+// import win from 'wind-ui-vue/es'
+// import 'wind-ui-vue/es/index.css'
 // Vue.use(win)
 
 // 不使用的组件会被tree shaking掉
-import { Button, Card } from 'wind-ui'
+import { Button, Card } from 'wind-ui-vue'
+// import { Button } from '../../wind-ui/es/components/button/index'
+// import Button from '../../wind-ui/es/components/button/index'
 // Vue.use(Card)
 
 // 不使用的时候依然导入了

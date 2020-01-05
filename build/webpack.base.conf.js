@@ -5,6 +5,9 @@ const webpack = require('webpack')
 const { VueLoaderPlugin } = require('vue-loader')
 const  { CleanWebpackPlugin }  = require('clean-webpack-plugin')
 
+// const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 const baseConf = {
   // constext: '..',
   module: {
@@ -54,7 +57,13 @@ const baseConf = {
       {
         test: /\.scss$/,
         use: [
-          'style-loader',
+          {
+            loader: MiniCssExtractPlugin.loader,
+            // options: {
+            //   hmr: process.env.NODE_ENV === 'development',
+            // },
+          },
+          // 'style-loader',
           'css-loader',
           'postcss-loader',
           {
@@ -66,8 +75,8 @@ const baseConf = {
     ]
   },
   plugins: [
-    new VueLoaderPlugin()
-
+    new VueLoaderPlugin(),
+    new MiniCssExtractPlugin()
   ],
   resolve: {
     extensions: ['.js', '.vue'] 

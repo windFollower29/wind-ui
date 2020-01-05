@@ -1,12 +1,14 @@
 {
-  "name": "wind-ui",
+  "name": "wind-ui-vue",
   "version": "1.0.0",
   "description": "",
   "main": "lib/index.js",
+  "module": "es/index.js",
   "scripts": {
     "dev": "webpack-dev-server --config build/webpack.dev.conf.js",
     "build:site": "webpack --config build/webpack.dev.conf.js",
-    "build:lib": "webpack --config build/webpack.lib.conf.js && gulp && node build/copy-task.js",
+    "build:lib": "webpack --config build/webpack.lib.conf.js && gulp lib && node build/copy-task.js",
+    "build:es": "rollup -c rollup.config.js && gulp es && node build/copy-task.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -15,6 +17,7 @@
   "devDependencies": {
     "@babel/core": "^7.7.7",
     "@babel/preset-env": "^7.7.7",
+    "@rollup/plugin-node-resolve": "^6.1.0",
     "autoprefixer": "^9.7.3",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
     "babel-loader": "^8.0.6",
@@ -23,6 +26,7 @@
     "babel-plugin-transform-vue-jsx": "^3.7.0",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.4.0",
+    "extract-text-webpack-plugin": "^3.0.2",
     "fs-extra": "^8.1.0",
     "glob": "^7.1.6",
     "gulp": "^3.9.1",
@@ -32,10 +36,15 @@
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
     "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.9.0",
     "mkdirp": "^0.5.1",
     "node-sass": "^4.13.0",
     "postcss-loader": "^3.0.0",
     "rollup": "^1.28.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-scss": "^2.1.0",
+    "rollup-plugin-vue": "^5.1.4",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.1.2",
     "vue-loader": "^15.8.3",
@@ -48,6 +57,8 @@
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.7.6",
     "@babel/runtime": "^7.7.7",
+    "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
+    "@vue/babel-preset-jsx": "^1.1.2",
     "vue": "^2.6.11"
   }
 }
