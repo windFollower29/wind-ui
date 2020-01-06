@@ -33,12 +33,14 @@ gulp.task('lib', ['libScss'], () => {
 
 gulp.task('es', ['esScss'])
 
-gulp.task('libScss', () => {
-  return scssTask(LIB_DIR)
+gulp.task('libScss', cb => {
+  scssTask(LIB_DIR)
+  cb()
 })
 
-gulp.task('esScss', () => {
-  return scssTask(ES_DIR)
+gulp.task('esScss', cb => {
+  scssTask(ES_DIR)
+  cb()
 })
 
 function scssTask (DIR) {

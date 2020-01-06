@@ -28,7 +28,7 @@ module.exports = {
       {
         'libraryName': 'wind-ui-vue',
         libraryDirectory: 'lib/components',
-        'style': 'css',
+        'style': true,
       },
       // 'wind-ui'
     ]
